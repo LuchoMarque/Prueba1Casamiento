@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+@layer components {
+  .componentList{
+    @apply items-center justify-center 
+    text-black p-2 inline-block
+    text-xl hover:font-bold transition-all 
+    duration-100 cursor-pointer;
+  }
+  .underline-slide {
+    @apply relative overflow-hidden;
+  }
+
+  .underline-slide::after {
+    content: "";
+    @apply absolute left-0 bottom-0 w-0 h-[3px] bg-gray-600
+    transition-all duration-200 ease-linear;
+  }
+
+  .underline-slide:hover::after {
+    @apply w-full 
+  }
+}
+
+@keyframes grow {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+.animate-grow {
+  animation: grow 1s forwards;
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+.font-script {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.text-shadow-white {
+  text-shadow: 2px 2px 4px black;
+}
